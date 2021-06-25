@@ -21,7 +21,13 @@
       <td>{{ $comic->title }}</td>
       <td>{{ $comic->price }}</td>
       <td>{{ $comic->sale_date }}</td>
-      <td><a href="{{ route('comics.show', $comic->id) }}">Dettagli...</a></td>
+      <td>
+        <a href="{{ route('comics.show', $comic->id) }}">Dettagli...</a>
+        <a href="{{ route('comics.edit', $comic->id) }}">modifica</a>
+        <form action="{{ route('comics.edit', $comic->id) }}">
+        
+        </form>
+      </td>
     </tr>
     @endforeach
   </tbody>

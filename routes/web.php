@@ -24,3 +24,9 @@ Route::post('/comics', 'ComicController@store')->name('comics.store');
 
 //prendo singolo fumetto da table -@show
 Route::get('/comics/{comic}', 'ComicController@show')->name('comics.show');
+
+
+Route::match(["put","patch"],'/comics/{comic}', 'ComicController@update')->name('comics.update');
+
+Route::get('/comics/{comic}/edit', 'ComicController@edit')->name('comics.edit');
+

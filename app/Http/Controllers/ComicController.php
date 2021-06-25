@@ -71,8 +71,11 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   $comic=Comic::find($id);
+
+        return view("comics.edit",[
+            "comic"=> $comic
+        ]);
     }
 
     /**
@@ -83,8 +86,16 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   $comic=Comic::find($id);
+
+        $formData= $request->all();
+
+        $comic->update($formData);
+
+        // var_dump($formData);
+
+        return redirect()->route('comics.show', $comic->id);
+        
     }
 
     /**
