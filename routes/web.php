@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//prendo tutti dati da table comics -@index
+Route::get('/', 'ComicController@index')->name('comics.index'); 
+
+//creiamo nuovo fumetto -@create pagina con form
+Route::get('/comics/create', 'ComicController@create')->name('comics.create'); 
+
+//metodo post per imagazzinare dati -@store
+Route::post('/comics', 'ComicController@store')->name('comics.store'); 
+
+//prendo singolo fumetto da table -@show
+Route::get('/comics/{comic}', 'ComicController@show')->name('comics.show');
