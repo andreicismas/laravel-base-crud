@@ -26,13 +26,7 @@
         <a href="{{ route('comics.edit', $comic->id) }}">modifica</a>
 
 
-        <form action="{{ route('comics.destroy', $comic->id) }}" method="post">
-          @csrf
-
-           @method('DELETE')
-
-           <input type="submit" value="destroy">
-        </form>
+        @include('comics.components.btn_destroy',["id"=>$comic->id])
       </td>
     </tr>
     @endforeach

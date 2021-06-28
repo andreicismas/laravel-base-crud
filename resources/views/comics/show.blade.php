@@ -10,5 +10,7 @@
         <p>data uscita -{{ $comic->sale_date }}</p>
         <p>tipologia -  {{ $comic->type }}</p>
 
+         @include('comics.components.btn_destroy',["comic"=>$comic])
+
         <a href="{{ route('comics.index') }}">back in  fumetti</a>
 @endsection
