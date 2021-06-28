@@ -1,5 +1,7 @@
 @extends('layout.default')
 @section('content')
+@include('comics.components.errorsAlert')
+
 
     <form action="{{ route('comics.update',$comic->id ) }}" method="post">
         @csrf

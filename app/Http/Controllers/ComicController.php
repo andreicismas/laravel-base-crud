@@ -42,7 +42,7 @@ class ComicController extends Controller
         $data = $request->all();
 
         $request->validate([
-            "title"=>"required",
+            "title"=>"required|max:",
             "description"=>"required",
             "type"=>"required",
         ]);
