@@ -25,8 +25,11 @@ Route::post('/comics', 'ComicController@store')->name('comics.store');
 //prendo singolo fumetto da table -@show
 Route::get('/comics/{comic}', 'ComicController@show')->name('comics.show');
 
+// match(["put","patch"] prende uno o laltro  \\ edita i dati al db di un utente gia esidtente
+Route::match(["PUT","PATCH"],'/comics/{comic}', 'ComicController@update')->name('comics.update');
 
-Route::match(["put","patch"],'/comics/{comic}', 'ComicController@update')->name('comics.update');
+// elimina i dati dal db
+Route::delete('/comics/{comic}', 'ComicController@destroy')->name('comics.destroy');
 
 Route::get('/comics/{comic}/edit', 'ComicController@edit')->name('comics.edit');
 

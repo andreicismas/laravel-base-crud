@@ -24,8 +24,14 @@
       <td>
         <a href="{{ route('comics.show', $comic->id) }}">Dettagli...</a>
         <a href="{{ route('comics.edit', $comic->id) }}">modifica</a>
-        <form action="{{ route('comics.edit', $comic->id) }}">
-        
+
+
+        <form action="{{ route('comics.destroy', $comic->id) }}" method="post">
+          @csrf
+
+           @method('DELETE')
+
+           <input type="submit" value="destroy">
         </form>
       </td>
     </tr>

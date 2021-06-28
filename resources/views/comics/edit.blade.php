@@ -13,6 +13,9 @@
         {{-- descrizione --}}
         <label for="description">descrizione</label>
         <input type="text" name="description" id="description" value={{$comic->description}}>
+        {{-- prezzo --}}
+        <label for="price">prezzo US</label>
+        <input type="number" name="price" id="price" value={{ $comic->price }}>
       
        
         <input type="submit" value="save">
