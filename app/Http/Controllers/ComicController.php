@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Comic;
 
+
 class ComicController extends Controller
 {
     /**
@@ -42,7 +43,7 @@ class ComicController extends Controller
         $data = $request->all();
 
         $request->validate([
-            "title"=>"required|max:",
+            "title"=>"required|max:200",
             "description"=>"required",
             "type"=>"required",
         ]);
@@ -58,6 +59,7 @@ class ComicController extends Controller
         $newComic->sale_date = $data['sale_date'];
         $newComic->type = $data['type'];
         $newComic->save();
+
         return redirect()->route('comics.show', $newComic->id);
     }
 
