@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //prendo tutti dati da table comics -@index
-Route::get('/', 'ComicController@index')->name('comics.index'); 
+Route::get('/', 'ComicController@index')->name('comics.index');     
 
 //creiamo nuovo fumetto -@create pagina con form
 Route::get('/comics/create', 'ComicController@create')->name('comics.create'); 
@@ -33,3 +33,5 @@ Route::delete('/comics/{comic}', 'ComicController@destroy')->name('comics.destro
 
 Route::get('/comics/{comic}/edit', 'ComicController@edit')->name('comics.edit');
 
+
+Route::get('/news/index', 'NewsController@index')->name('news.index');     
